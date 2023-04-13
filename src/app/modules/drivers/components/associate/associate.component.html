@@ -14,7 +14,9 @@
     </div>
     <div class="modal-body">
       <form>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3"
+        *ngFor="let list of blogList"
+        >
           <div class="input-group-text">
             <input
               class="form-check-input mt-0"
@@ -27,10 +29,11 @@
             class="row"
             type="text form-control"
             aria-label="Text input with checkbox"
+            
           >
-            <div class="col-4"><p>Placa:</p></div>
-            <div class="col-4"><p>Modelos:</p></div>
-            <div class="col-4"><p>Capacidad:</p></div>
+            <div class="col-4"><p>Placa:{{list.placa}}</p></div>
+            <div class="col-4"><p>Modelos:{{list.modelo}}</p></div>
+            <div class="col-4"><p>Capacidad:{{list.capacidad}} </p></div>
           </div>
         </div>
       </form>
