@@ -9,17 +9,18 @@ import { delay } from 'rxjs/operators'
   providedIn: 'root',
 })
 export class DriversService {
-  private vari = environment;
+  private vari = environment.baseUrl;
   private respons = {};
   constructor(private http: HttpClient) {}
 
   getAllDrivers() {
-    return this.http.get('conductor/conductor/')
+    console.log(this.vari)
+    return this.http.get(`${this.vari}conductor/conductor/`)
   }
   createDrivers(Drivers:ConductorsModel){
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(Drivers);
-    this.http.post('conductor/conductor/',body,{'headers':headers , observe: 'response'})
+    this.http.post(`${this.vari}conductor/conductor/`,body,{'headers':headers , observe: 'response'})
     .subscribe(
       response =>{
         console.log("creado con extio" + response)
@@ -36,7 +37,7 @@ export class DriversService {
     
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(Drivers);
-    this.http.put(`conductor/vehiculos_no_asignados/${id}`,body,{'headers':headers , observe: 'response'})
+    this.http.put(`${this.vari}conductor/vehiculos_no_asignados/${id}/`,body,{'headers':headers , observe: 'response'})
     .subscribe(
       response =>{
         console.log("creado con extio"+response)
@@ -52,7 +53,7 @@ export class DriversService {
   uptDriversDesAso (Drivers:any,id:number){
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(Drivers);
-    this.http.put(`conductor/vehiculos_asignados/${id}`,body,{'headers':headers , observe: 'response'})
+    this.http.put(`${this.vari}conductor/vehiculos_asignados/${id}/`,body,{'headers':headers , observe: 'response'})
     .subscribe(
       response =>{
         console.log("creado con extio"+response)
@@ -67,10 +68,10 @@ export class DriversService {
   }
 
   getAllDriversAso(id:number) {
-    return this.http.get(`/conductor/vehiculos_asignados/${id}`)
+    return this.http.get(`${this.vari}conductor/vehiculos_asignados/${id}/`)
  }
   getAllDriversDeso(id:number) {
-    return this.http.get(`conductor/vehiculos_no_asignados/${id}`)
+    return this.http.get(`${this.vari}conductor/vehiculos_no_asignados/${id}/`)
  }
 
 
