@@ -19,33 +19,35 @@
     </div>
   </div>
 </div>
-<div class="ui-wrapper">
+<div class="ui-wrapper" >
   <div class="ui-filter">
     <div class="ui-filter-top">
+      <div
+      *ngFor="let list of List "
+      >
       <div class="ui-item">
         <div class="ui-image">
           <div>
             <div>
-                <p>Nombre </p>
+                <p>Nombre: {{list.nombre}} </p>
             </div>
             <div>
-                <p>Apellido </p>
+                <p>Apellido: {{list.apellido}} </p>
             </div>
             <div>
-                <p>dire </p>
+                <p>Dirección: {{list.direccion}} </p>
             </div>
           </div>
         </div>
         <div class="ui-block-text">
-          <!-- <h3>{{item?.name}}</h3> -->
           <div class="ui-more-info">
             <div class="ui-small-section">
                 <div>
                     <div>
-                        <p>tel </p>
+                        <p>Teléfono: {{list.telefono}}  </p>
                     </div>
                     <div>
-                        <p>iden </p>
+                        <p>Identificación : {{list.identificacion}}  </p>
                     </div>
                    
                   </div>
@@ -79,6 +81,8 @@
           </div>
         </div>
       </div>
+      </div>
+     
     </div>
   </div>
 </div>

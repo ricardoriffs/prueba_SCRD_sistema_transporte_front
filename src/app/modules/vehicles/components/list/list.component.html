@@ -22,17 +22,19 @@
 <div class="ui-wrapper">
   <div class="ui-filter">
     <div class="ui-filter-top">
-      <div class="ui-item">
-        <div class="ui-image">
-          <div>
+      <div *ngFor="let list of List">
+        <div class="ui-item">
+          <div class="ui-image">
             <div>
-              <p>Placa:</p>
-            </div>
-            <div>
-              <p>Modelo:</p>
-            </div>
-            <div>
-              <p>Capacidad:</p>
+              <div>
+                <p>Placa:{{list.placa}}</p>
+              </div>
+              <div>
+                <p>Modelo:{{list.modelo}}</p>
+              </div>
+              <div>
+                <p>Capacidad:{{list.capacidad}}</p>
+              </div>
             </div>
           </div>
         </div>

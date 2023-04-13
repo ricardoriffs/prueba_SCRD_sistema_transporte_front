@@ -1,5 +1,6 @@
 <div class="modal-dialog">
   <div class="modal-content">
+    <form [formGroup]="checkoutForm" name="crearEventoForm()" (ngSubmit)="createEvento(checkoutForm.value)">
     <div class="modal-header">
       <h1 class="modal-title fs-5" id="staticBackdropLabel">Crear Conductor</h1>
       <button
@@ -10,11 +11,16 @@
       ></button>
     </div>
     <div class="modal-body">
-      <form>
         <div class="input-group mb-3">
           <span class="input-group-text"> Nombre y Apellido</span>
-          <input type="text" aria-label="First name" class="form-control" />
-          <input type="text" aria-label="Last name" class="form-control" />
+          <input type="text" aria-label="First name" class="form-control"
+          formControlName="nombre"
+            id="nombre"
+          />
+          <input type="text" aria-label="Last name" class="form-control"
+          formControlName="apellido"
+            id="apellido"
+          />
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default"
@@ -25,6 +31,8 @@
             class="form-control"
             aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-default"
+            formControlName="identicacion"
+            id="identificacion"
           />
         </div>
         <div class="input-group mb-3">
@@ -36,7 +44,9 @@
             class="form-control"
             aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-default"
-          />
+            formControlName="telefono"
+            id="telefono"
+            />
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default"
@@ -47,15 +57,17 @@
             class="form-control"
             aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-default"
+            formControlName="direccion"
+            id="direccion"
           />
         </div>
-      </form>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
         Cerrar
       </button>
-      <button type="button" class="btn btn-success">Crear</button>
+      <button type="button" class="btn btn-success" type="submit">Crear</button>
     </div>
+  </form>
   </div>
 </div>

@@ -4,16 +4,19 @@ import { CommonModule } from '@angular/common';
 import { VehiclesRoutingModule } from './vehicles-routing.module';
 import { CreateComponent } from './components/create/create.component';
 import { ListComponent } from './components/list/list.component';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     CreateComponent,
-    ListComponent
+    ListComponent,
   ],
   imports: [
     CommonModule,
-    VehiclesRoutingModule
+    VehiclesRoutingModule,
+    ReactiveFormsModule
+
   ]
 })
 export class VehiclesModule { }

@@ -14,8 +14,10 @@
     </div>
     <div class="modal-body">
       <form>
+        <div
+        *ngFor="let list of blogList   "
+        >
         <div class="input-group mb-3"
-        *ngFor="let list of blogList"
         >
           <div class="input-group-text">
             <input
@@ -23,6 +25,7 @@
               type="checkbox"
               value=""
               aria-label="Checkbox for following text input"
+              (change)="onCategoriaPressed(list,true)"
             />
           </div>
           <div
@@ -36,13 +39,15 @@
             <div class="col-4"><p>Capacidad:{{list.capacidad}} </p></div>
           </div>
         </div>
+      </div>
+      
       </form>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
         Cancelar
       </button>
-      <button type="button" class="btn btn-success">Aceptar</button>
+      <button type="button" class="btn btn-success" (click)="onSumnit()" >Aceptar</button>
     </div>
   </div>
 </div>

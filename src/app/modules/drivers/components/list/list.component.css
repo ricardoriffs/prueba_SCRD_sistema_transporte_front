@@ -12,6 +12,8 @@
 
 .ui-filter-top {
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .ui-list {
